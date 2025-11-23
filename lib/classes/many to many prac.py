@@ -1,29 +1,3 @@
-class Article:
-    all = []
-    def __init__(self, author, magazine, title):
-        if not isinstance(author, Author):
-            raise ValueError("Author must be an Author object")
-
-        if not isinstance(magazine, Magazine):
-            raise ValueError("Magazine must be a Magazine object")
-
-        if isinstance(title, str):
-            if 5 <= len(title) <= 50:
-                 self.title = title
-            else:
-                raise ValueError("Title must be 5-50 characters")
-        else:
-            raise ValueError("Title must be a string")
-
-        self.author = author
-        self.magazine = magazine
-
-        Article.all.append(self)
-
-    @property
-    def title(self):
-        return self._title
-        
 class Author:
     def __init__(self, name):
         if isinstance(name, str):
